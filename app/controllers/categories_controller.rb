@@ -13,7 +13,8 @@ class CategoriesController < ApplicationController
             flash[:notice] = "Category has been created."
             redirect_to @category
         else
-            redirect_to @category, alert: "Category was not saved."
+            flash[:alert] =  "The category was not saved."
+            render "new"
         end
     end
 
