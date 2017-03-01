@@ -1,4 +1,7 @@
 class CategoriesController < ApplicationController
+
+    
+
     def index
         @categories = Category.all
     end
@@ -21,6 +24,22 @@ class CategoriesController < ApplicationController
 
     def show
         @category = Category.find(params[:id])
+    end
+
+    def edit
+        @category = Category.find(params[:id])
+    end
+
+    def update
+        @category = Category.find(params[:id])
+
+        if @category.update(category_params)
+            flash[:notice] = "Category was updated."
+            redirect_to @category
+        else
+            flash[:alert] = "Category was not updated."
+            render "edit"
+        end
     end
 
     private
