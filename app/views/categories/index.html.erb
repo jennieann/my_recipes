@@ -1,6 +1,11 @@
-<h1>Mina recept</h1>
-<%= link_to "New Category", new_category_path  %>
-<div id="categories">
+<div class="page-header">
+    <h1>Mina recept</h1>
+    <ul class="menu-actions">
+        <li><%= link_to " New Category", new_category_path, class: "button-new"  %></li>
+    </ul>
+</div>
+
+<div class="categories">
 
     <% @categories.each do |category| %>
         <h2><%= link_to category.name, category %></h2>

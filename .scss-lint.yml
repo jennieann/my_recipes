@@ -1,0 +1,29 @@
+# This is our setting for scss linter.
+# To view all linter settings visit
+# https://github.com/brigade/scss-lint/blob/master/lib/scss_lint/linter/README.md
+
+scss_files: 'app/assets/stylesheets/**/*.scss'
+
+exclude: 
+  - 'app/assets/stylesheets/slick/*'
+  - 'app/assets/stylesheets/_reset.scss'
+  - 'app/assets/stylesheets/_swiper.scss'
+
+linters:
+  BemDepth:
+    enabled: false  
+  Indentation:
+    severity: warning
+    width: 4
+  BorderZero:
+    enabled: false
+  Comment:
+    enabled: false
+  LeadingZero:
+    style: include_zero
+  PropertySortOrder:
+    enabled: false
+  SingleLinePerProperty:
+    allow_single_line_rule_sets: false
+  SpaceAfterComment:
+    enabled: false

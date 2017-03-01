@@ -1,3 +1,89 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'font-awesome';
+@import 'categories';
+
+$gallery: #eee;
+
+%button {
+    @extend .btn;
+
+    &::before {
+        font-family: 'FontAwesome';
+        padding-right: 0.5em;
+    }
+}
+
+
+.page-header {
+    padding-bottom: 0;
+    position: relative;
+
+    &:first-child {
+        margin-top: 20px;
+    }
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    max-width: 55%;
+}
+
+
+.menu-actions {
+    @extend .list-unstyled;
+    @extend .list-inline;
+
+    max-width: 45%;
+    text-align: right;
+    position: absolute;
+    bottom: -2px;
+    right: 2px;
+}
+
+.button-new {
+    @extend %button;
+    @extend .btn-success;
+
+    &::before {
+        @extend .fa-plus;
+
+   }
+}
+
+.button-delete {
+    @extend %button;
+    @extend .btn-danger;
+
+    &::before {
+        @extend .fa-trash;
+
+   }
+}
+
+.button-edit {
+    @extend %button;
+    @extend .btn-primary;
+
+    &::before {
+        @extend .fa-pencil;
+   }
+}
+
+header {
+    padding-bottom: 0;
+    position: relative;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid $gallery;
+
+    &:first-child {
+        margin-top: 20px;
+    }
+}
+
+

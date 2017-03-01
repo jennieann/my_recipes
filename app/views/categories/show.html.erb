@@ -1,9 +1,15 @@
 <% title(@category.name, "Category") %>
-<h1><%=@category.name%></h1>
+<header>
+    <h1><%=@category.name%></h1>
+    <ul class="menu-actions">
+
+        <li><%= link_to fa_icon("pencil") + " Edit Category", edit_category_path(@category) , class: "btn btn-primary"%></li>
+        <li><%= link_to fa_icon("trash")+ " Delete Category",
+             category_path(@category),
+             method: :delete,
+             data: {confirm: "Är du säker på att du vill ta bort kategorin?"},
+             class: "btn btn-danger" %>
+        </li>
+    </ul>
+</header>
 <p><%=@category.description %></p>
-<%= link_to "Edit Category", edit_category_path(@category) %>
-<%= link_to "Delete Category",
-     category_path(@category),
-     method: :delete,
-     data: {confirm: "Är du säker på att du vill ta bort kategorin?"}
-%>
